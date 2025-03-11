@@ -1,21 +1,25 @@
 console.log("hello Etch-a-Sketch");
 
 function createGridOfDivs() {
-  const divs = 16;
-  const height = "120px";
-  const width = "120px";
+  const divs = 10000;
   const container = document.querySelector(".container");
 
   for (let i = 0; i < divs; i++) {
     const div = document.createElement("div");
-    div.style.height = height;
-    div.style.width = width;
-    div.style.backgroundColor = "black";
-    div.id = i;
+    div.style.width = "1%";
+    div.style.height = "1%";
+    div.id = `grid${i}`;
     div.className = "grid";
 
     container.appendChild(div);
   }
+  container.addEventListener("mousemove", colorMe);
 }
+
+const colorMe = (event) => {
+  const div = document.querySelector(`#${event.target.id}`);
+  div.style.backgroundColor = "black";
+  div.style.borderRadius = "50%";
+};
 
 createGridOfDivs();
