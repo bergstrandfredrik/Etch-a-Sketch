@@ -8,10 +8,18 @@
 body {
   text-align: center;
   padding: 14px 0;
+  background-color: burlywood;
+  height: 100vh;
 }
 
 .container {
   display: flex;
-  background-color: burlywood;
-  height: 100vh;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 480px;
+  height: 480px;
+  margin: 28px auto;
+}
+
+.grid {
 }
