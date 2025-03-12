@@ -1,3 +1,5 @@
+const alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+
 console.log("hello Etch-a-Sketch");
 
 function createGridOfDivs() {
@@ -18,8 +20,16 @@ function createGridOfDivs() {
 
 const colorMe = (event) => {
   const div = document.querySelector(`#${event.target.id}`);
-  div.style.backgroundColor = "black";
+  div.style.backgroundColor = getRandomRGBColor();
   div.style.borderRadius = "50%";
+};
+
+const getRandomRGBColor = () => {
+  return `rgb(${getRndNr()}, ${getRndNr()}, ${getRndNr()})`;
+};
+
+const getRndNr = () => {
+  return Math.floor(Math.random() * 256);
 };
 
 createGridOfDivs();
